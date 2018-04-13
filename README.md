@@ -27,7 +27,7 @@ bash /prepare_2018/1-apt.sh | tee log-1-apt.txt
 
 * Build unity
 ```bash
-bash /prepare/2-unity.sh
+bash /prepare_2018/2-unity.sh
 ```
 
 * Install Linuxbrew and install CLI apps via Homebrew/Linuxbrew
