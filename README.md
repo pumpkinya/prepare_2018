@@ -64,7 +64,6 @@ bash prepare_2018/3-brew.sh
 bash prepare_2018/perl/install.sh
 bash prepare_2018/python/install.sh
 bash prepare_2018/r/install.sh
-
 ```
 
 * vim plugins
