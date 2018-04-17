@@ -17,25 +17,6 @@ fi
 mkdir -p $HOME/bin
 mkdir -p $HOME/share
 
-echo "==> circos"
-cd /prepare/resource/
-wget -N http://science-annex.org/pub/circos/circos-0.67-7.tgz
-cd $HOME/share/
-rm -fr circos
-tar xvfz /prepare/resource/circos-0.67-7.tgz
-mv circos-0.67-7 circos
-
-perl -pi -e 's{^#!\/bin\/env}{#!\/usr\/bin\/env}g' $HOME/share/circos/bin/circos
-perl -pi -e 's{^#!\/bin\/env}{#!\/usr\/bin\/env}g' $HOME/share/circos/bin/gddiag
-
-ln -s $HOME/share/circos/bin/circos $HOME/bin/circos
-
-cd /prepare/resource/
-wget -N http://circos.ca/distribution/circos-tools-0.21.tgz
-cd $HOME/share/
-rm -fr circos-tools
-tar xvfz /prepare/resource/circos-tools-0.21.tgz
-mv circos-tools-0.21 circos-tools
 
 echo "==> kent bin"
 cd $HOME/bin/
