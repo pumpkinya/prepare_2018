@@ -22,15 +22,15 @@ cd ~
 
 * Install Ubuntu packages
 ```bash 
-bash /prepare_2018/1-apt.sh | tee log-1-apt.txt
+bash prepare_2018/1-apt.sh | tee log-1-apt.txt
 ```
 
 * Build unity
 ```bash
-bash /prepare_2018/2-unity.sh
+bash prepare_2018/2-unity.sh
 ```
 
-* Install Linuxbrew and install CLI apps via Homebrew/Linuxbrew
+* Install Linuxbrew
 ```bash
 echo '==> Install Linuxbrew'
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
@@ -39,8 +39,18 @@ test -d ~/.linuxbrew && PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
 test -d /home/linuxbrew/.linuxbrew && PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
 test -r ~/.profile && echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' >>~/.profile
 echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' >>~/.profile
-
-
 ```
+
+* Install CLI apps via Homebrew/Linuxbrew
+  * `
+bash prepare_2018/3-brew.sh
+`
+
+* Install Perl Python and R
+```bash
+bash prepare_2018/perl/install.sh
+bash prepare_2018/python/install.sh
+bash prepare_2018/r/install.sh
+````
 
 
