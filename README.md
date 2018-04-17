@@ -16,19 +16,19 @@ configuration on Ubuntu 14.04.5LTS
   
 ## Steps on Ubuntu
 
-  * `
+```basn
 cd ~
-`
+```
 
 * Install Ubuntu packages
-  * ` 
+```bash
 bash prepare_2018/1-apt.sh | tee log-1-apt.txt
-`
+```
 
 * Build unity
-  * `
+```bash
 bash prepare_2018/2-unity.sh
-`
+```
 
 * Install Linuxbrew
 ```bash
@@ -42,9 +42,9 @@ echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' >>~/.p
 ```
 
 * Install CLI apps via Homebrew/Linuxbrew
-  * `
+```bash
 bash prepare_2018/3-brew.sh
-`
+```
 
 * Install [`Perl`](perl/) [`Python`](python/) and [`R`](r/)
 ```bash
@@ -54,13 +54,15 @@ bash prepare_2018/r/install.sh
 ````
 
 * vim plugins
-    * `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
-    * `vim +PluginInstall +qall`
+```bash
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
+```
 
 * Install bioinformatics apps via Homebrew science and homebrew-tap. Install Trinity, GATK and picard manually
-  * `
-  bash prepare_2018/4-genomics.sh
-  `
+```bash
+bash prepare_2018/4-genomics.sh
+```
   
 * Do other clones and downloads
 ```bash
@@ -70,8 +72,8 @@ bash prepare_2018/6-download.sh
 
 * Install MySQL and Ensembl
 ```bash
-  bash prepare_2018/7-mysql.sh
-  bash prepare_2018/8-ensembl.sh        # Optional, needed by alignDB
+bash prepare_2018/7-mysql.sh
+bash prepare_2018/8-ensembl.sh        # Optional, needed by alignDB
 ```
 
 ## Building steps is completed.
