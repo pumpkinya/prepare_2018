@@ -74,8 +74,8 @@ rm -fr circos
 tar xvfz $HOME/prepare/resource/circos-0.69-6.tgz
 mv circos-0.69-6 circos
 
-perl -pi -e 's{^#!\/bin\/env}{#!\/usr\/bin\/env}g' $HOME/share/circos/bin/circos
-perl -pi -e 's{^#!\/bin\/env}{#!\/usr\/bin\/env}g' $HOME/share/circos/bin/gddiag
+sudo perl -pi -e 's{^#!\/bin\/env}{#!\/usr\/bin\/env}g' $HOME/share/circos/bin/circos
+sudo perl -pi -e 's{^#!\/bin\/env}{#!\/usr\/bin\/env}g' $HOME/share/circos/bin/gddiag
 
 ln -fs $HOME/share/circos/bin/circos $HOME/bin/circos
 
