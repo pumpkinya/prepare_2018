@@ -39,6 +39,19 @@ test -d ~/.linuxbrew && PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
 test -d /home/linuxbrew/.linuxbrew && PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
 test -r ~/.profile && echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' >>~/.profile
 echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' >>~/.profile
+
+if grep -q -i linuxbrew $HOME/.bashrc; then
+    echo "==> .bashrc already contains linuxbrew"
+else
+    echo "==> Update .bashrc"
+    echo >> $HOME/.bashrc
+    echo '# Linuxbrew' >> $HOME/.bashrc
+    echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' >> $HOME/.bashrc
+    echo "export MANPATH='$(brew --prefix)/share/man'":'"$MANPATH"' >> $HOME/.bashrc
+    echo "export INFOPATH='$(brew --prefix)/share/info'":'"$INFOPATH"' >> $HOME/.bashrc
+    echo "export HOMEBREW_NO_ANALYTICS=1" >> $HOME/.bashrc
+    echo >> $HOME/.bashrc
+fi
 ```
 
 * Install CLI apps via Homebrew/Linuxbrew
@@ -51,7 +64,8 @@ bash prepare_2018/3-brew.sh
 bash prepare_2018/perl/install.sh
 bash prepare_2018/python/install.sh
 bash prepare_2018/r/install.sh
-````
+
+```
 
 * vim plugins
 ```bash
