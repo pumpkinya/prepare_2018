@@ -30,7 +30,7 @@ bash prepare_2018/1-apt.sh | tee log-1-apt.txt
 bash prepare_2018/2-unity.sh
 ```
 
-* Install Linuxbrew
+* Install [`Linuxbrew`](http://linuxbrew.sh/)
 ```bash
 echo '==> Install Linuxbrew'
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
