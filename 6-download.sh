@@ -28,5 +28,6 @@ done
 
 echo "==> Download RepeatMasker"
 cd $HOME/prepare/resource    
-wget -N -P ${BASE_DIR} http://www.repeatmasker.org/RepeatMasker-open-4-0-7.tar.gz
-wget -N -P ${BASE_DIR} https://github.com/egateam/egavm/releases/download/20170907/repeatmaskerlibraries-20140131.tar.gz
+wget -N -P http://www.repeatmasker.org/RepeatMasker-open-4-0-7.tar.gz
+wget -N -P https://github.com/egateam/egavm/releases/download/20170907/repeatmaskerlibraries-20140131.tar.gz
+wget -N -P https://linuxbrew.bintray.com/bottles/blast-2.7.1.x86_64_linux.bottle.tar.gz
