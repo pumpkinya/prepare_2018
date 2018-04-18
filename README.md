@@ -56,37 +56,37 @@ fi
 
 * Install CLI apps via Homebrew/Linuxbrew
 ```bash
-bash prepare_2018/3-brew.sh
+bash prepare_2018/3-brew.sh | tee log-3-brew.txt
 ```
 
 * Install [`Perl`](perl/) [`Python`](python/) and [`R`](r/)
 ```bash
-bash prepare_2018/perl/install.sh
-bash prepare_2018/python/install.sh
-bash prepare_2018/r/install.sh
+bash prepare_2018/perl/install.sh | tee log-perl.txt
+bash prepare_2018/python/install.sh | tee log-python.txt
+bash prepare_2018/r/install.sh | tee log-r.txt
 ```
 
 
 * Install bioinformatics apps via Homebrew science and homebrew-tap. Install Trinity, GATK and picard manually
 ```bash
-bash prepare_2018/4-genomics.sh
+bash prepare_2018/4-genomics.sh | tee log-4-genomics.txt
 ```
   
 * Do other clones and downloads
 ```bash
-bash prepare_2018/5-clone.sh
-bash prepare_2018/6-download.sh
+bash prepare_2018/5-clone.sh | tee log-5-clone.txt
+bash prepare_2018/6-download.sh | tee log-6-download.txt
 ```
 
 * Install other bioinfomatics softwares
 ```bash
-bash prepare_2018/7-bioinfo.sh
+bash prepare_2018/7-bioinfo.sh | tee log-7-bioinfo.txt
 ```
 
 * Install MySQL and Ensembl
 ```bash
-bash prepare_2018/8-mysql.sh
-bash prepare_2018/9-ensembl.sh        # Optional, needed by alignDB
+bash prepare_2018/8-mysql.sh | tee log-8-mysql.txt
+bash prepare_2018/9-ensembl.sh | tee log-9-ensembl.txt       # Optional, needed by alignDB
 ```
 
 ## Building steps is completed.
