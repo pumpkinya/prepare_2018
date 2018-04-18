@@ -78,10 +78,15 @@ bash prepare_2018/5-clone.sh
 bash prepare_2018/6-download.sh
 ```
 
+* Install other bioinfomatics softwares
+```bash
+bash prepare_2018/7-bioinfo.sh
+```
+
 * Install MySQL and Ensembl
 ```bash
-bash prepare_2018/7-mysql.sh
-bash prepare_2018/8-ensembl.sh        # Optional, needed by alignDB
+bash prepare_2018/8-mysql.sh
+bash prepare_2018/9-ensembl.sh        # Optional, needed by alignDB
 ```
 
 ## Building steps is completed.
