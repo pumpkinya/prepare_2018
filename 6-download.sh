@@ -24,3 +24,9 @@ for f in faToTwoBit axtChain chainAntiRepeat lavToPsl chainMergeSort chainPreNet
       mv ./${f} $HOME/bin/;
       chmod +x $HOME/bin/${f};
 done
+
+
+echo "==> Download RepeatMasker"
+cd $HOME/prepare/resource    
+wget -N -P ${BASE_DIR} http://www.repeatmasker.org/RepeatMasker-open-4-0-7.tar.gz
+wget -N -P ${BASE_DIR} https://github.com/egateam/egavm/releases/download/20170907/repeatmaskerlibraries-20140131.tar.gz
