@@ -66,11 +66,6 @@ bash prepare_2018/python/install.sh
 bash prepare_2018/r/install.sh
 ```
 
-* vim plugins
-```bash
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
-```
 
 * Install bioinformatics apps via Homebrew science and homebrew-tap. Install Trinity, GATK and picard manually
 ```bash
