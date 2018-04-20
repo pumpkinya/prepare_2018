@@ -17,7 +17,7 @@ NO_TEST=--notest
 
 # basic modules
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Archive::Extract Config::Tiny DB_File File::Find::Rule Getopt::Long::Descriptive JSON JSON::XS Text::CSV_XS YAML::Syck
-cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST App::Ack App::Cmd DBI MCE Moo Moose Perl::Tidy Template WWW::Mechanize XML::Parser
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST App::Ack LWP LWP::Protocol::https App::Cmd DBI MCE Moo Moose Perl::Tidy Template WWW::Mechanize XML::Parser
 
 # RepeatMasker need this
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Text::Soundex
