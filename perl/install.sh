@@ -65,11 +65,8 @@ cpanm --mirror-only --mirror $CPAN_MIRROR --notest MooX::Options MooseX::Storage
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST App::pmuninstall App::cpanoutdated Minilla
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Pod::POM::Web Search::Indexer PPI::XS
 
-# Gtk3 stuffs
-# cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Glib Cairo Cairo::GObject Glib::Object::Introspection Gtk3
+# complementary
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Bio::DB Config::Tiny XML::Twig LWP::Protocol::https
 
-# Math
-# cpanm --mirror-only --mirror $CPAN_MIRROR --notest Math::Random::MT::Auto PDL Math::GSL
-
-# Statistics::R would be installed in `7-brew.sh`
-# DBD::mysql would be installed in `extra/7-mysql.sh`
+# APP::Egaz
+cpanm -nq https://github.com/wang-q/App-Egaz.git
