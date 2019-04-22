@@ -16,8 +16,8 @@ Configuration on Ubuntu 14.04.5LTS
   
 ## Steps on Ubuntu
 
-```basn
-cd ~
+```bash
+cd
 ```
 
 * Install Ubuntu packages
@@ -81,6 +81,18 @@ bash prepare_2018/6-download.sh | tee log-6-download.txt
 * Install other bioinfomatics softwares
 ```bash
 bash prepare_2018/7-bioinfo.sh | tee log-7-bioinfo.txt
+```
+
+* Install GATK4
+```bash
+aria2c -x 4 https://github.com/broadinstitute/gatk/releases/download/4.1.1.0/gatk-4.1.1.0.zip
+## It might take many times because the connection is very poor. Or you can download it by a Windows PC.
+unzip gatk-4.1.1.0.zip
+echo >> $HOME/.bashrc
+echo "# GATK4" >> $HOME/.bashrc
+echo "export PATH='$(HOME)/gatk-4.1.1.0'":'"$PATH"' >> $HOME/.bashrc
+echo >> $HOME/.bashrc
+source .bashrc
 ```
 
 * Install MySQL and Ensembl
