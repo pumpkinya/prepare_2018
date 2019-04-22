@@ -67,7 +67,7 @@ bash prepare_2018/r/install.sh | tee log-r.txt
 ```
 
 
-* Install bioinformatics apps via Homebrew science and homebrew-tap. Install Trinity, GATK and picard manually
+* Install bioinformatics apps via Homebrew science and homebrew-tap. Install Trinity manually.
 ```bash
 bash prepare_2018/4-genomics.sh | tee log-4-genomics.txt
 ```
@@ -83,7 +83,7 @@ bash prepare_2018/6-download.sh | tee log-6-download.txt
 bash prepare_2018/7-bioinfo.sh | tee log-7-bioinfo.txt
 ```
 
-* Install GATK4
+* Install GATK4. GATK4 contains a copy of the Picard toolkit.
 ```bash
 aria2c -x 4 https://github.com/broadinstitute/gatk/releases/download/4.1.1.0/gatk-4.1.1.0.zip
 ## It might take many times because the connection is very poor. Or you can download it by a Windows PC.
