@@ -37,32 +37,15 @@ cd $HOME/share/trinityrnaseq-*
 make
 make plugins
 
-echo "==> gatk 3.5"
+#echo "==> gatk 3.5"
 # brew install maven
 
-if [ ! -e $HOME/prepare/resource/gatk-3.5.tar.gz ];
-then
-    cd $HOME/prepare/resource/
-    wget -N https://github.com/broadgsa/gatk-protected/archive/3.5.tar.gz
+#while [ ! -e $HOME/prepare/resource/gatk-4.1.1.0.zip ]
+#do
+#    cd $HOME/prepare/resource/
+#    aria2c -x 4 https://github.com/broadinstitute/gatk/releases/download/4.1.1.0/gatk-4.1.1.0.zip
+#done
 
-    cd $HOME/share/
-    tar xvfz $HOME/prepare/resource/3.5.tar.gz
-
-    cd $HOME/share/gatk-protected-*
-    # Compile the GATK but not Queue
-    mvn verify -P\!queue
-    mv target/executable $HOME/share/gatk
-
-    cd $HOME/share
-    tar cvfz gatk-3.5.tar.gz gatk
-    mv gatk-3.5.tar.gz $HOME/prepare/resource/
-else
-    cd $HOME/share/
-    tar xvfz $HOME/prepare/resource/gatk-3.5.tar.gz
-fi
-
-cd $HOME/share/
-java -jar java -jar gatk/GenomeAnalysisTK.jar --help
 
 echo "==> circos"
 cd $HOME/prepare/resource/
