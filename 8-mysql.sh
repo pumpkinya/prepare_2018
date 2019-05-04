@@ -52,10 +52,10 @@ else
 
     LB_PATH='export PATH="$HOME/share/mysql/bin:$PATH"'
     echo '# mysqlbin' >> $HOME/.bashrc
-    echo $LB_PATH >> $HOME/.bashrc
+    echo ${LB_PATH} >> $HOME/.bashrc
     echo >> $HOME/.bashrc
 
-    eval $LB_PATH
+    eval ${LB_PATH}
 fi
 
 cat <<EOF > ${MYSQL_DIR}/my.cnf
@@ -121,9 +121,23 @@ $HOME/share/mysql/bin/mysqld_safe &
 sleep 5
 
 echo "==> Securing mysql service"
-mysql_secure_installation
+if [ "$(whoami)" == 'vagrant' ];
+then
+    cat <<EOF | mysql_secure_installation
+Y
+vagrant
+vagrant
+Y
+Y
+Y
+Y
+EOF
+else
+    mysql_secure_installation
+fi
 
-
+# mkdir -p /tmp/mysql-static && cp $HOME/share/mysql/lib/mysql/*.a /tmp/mysql-static
+# perl Makefile.PL --testuser alignDB --testpassword alignDB --cflags="-I${HOME}/share/mysql/include/mysql -fPIC -DUNIV_LINUX -DUNIV_LINUX" --libs="-L/tmp/mysql-static -lmysqlclient -lz -lcrypt -lnsl -lm"
 cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ --notest DBD::mysql
 
 rm -fr $HOME/share/mysql-*
